@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "145362882731",
+    "project_id": "edskoolflutter",
+    "storage_bucket": "edskoolflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145362882731:android:f9e3f67dfaf1ae79a527ee",
+        "android_client_info": {
+          "package_name": "com.edskool.ed_skool"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhR9-DgcEQy2zOJy4FokhP_J7kGp03kGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

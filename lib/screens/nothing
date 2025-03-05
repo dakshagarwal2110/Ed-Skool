@@ -1,0 +1,80 @@
+import 'package:ed_skool/utils/app_size.dart';
+import 'package:ed_skool/utils/app_styles.dart';
+import 'package:flutter/material.dart';
+
+class InstagramPost extends StatelessWidget {
+  final String urlString;
+  final String caption;
+  final String date;
+
+
+  const InstagramPost({
+    required this.urlString,
+    required this.caption,
+    required this.date,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    int milliseconds = int.parse(date);
+    DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(milliseconds);
+    String dateFinal = dateTime.toString();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Container(
+          width: double.infinity,
+          height: AppSize.getHeight(420, context),
+
+
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+
+              Row(),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: AppSize.getWidth(16, context)),
+                child: Text(
+                    "@Principal",
+                    style: Styles.headLineStyle2.copyWith(color: Colors.black , fontWeight: FontWeight.w600)
+                ),
+              ),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: AppSize.getWidth(16, context)),
+                child: Text(
+                  caption,
+                  style: Styles.headLineStyle3.copyWith(color: Colors.black , fontWeight: FontWeight.w500)
+                ),
+              ),
+
+              Expanded(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(AppSize.getWidth(13, context)), // Adjust the radius as needed
+                    child: Image.network(
+                      urlString,
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: AppSize.getWidth(16, context) , vertical: AppSize.getHeight(8, context)),
+                child: Text(
+                    dateFinal,
+                    style: Styles.headLineStyle3.copyWith(color: Colors.black , fontWeight: FontWeight.w400)
+                ),
+              ),
+            ],
+          )
+        ),
+
+      ],
+    );
+  }
+}
